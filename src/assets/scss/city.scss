@@ -1,0 +1,206 @@
+// 城市组件样式
+$bind-white: #FFF;
+$bind-border: solid 1px #DDD;
+.top-head {
+	width: 100%;
+	height: 65px;
+	.head-fixed {
+		position: fixed;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+		width: 100%;
+		min-width: 320px;
+		max-width: 640px;
+		height: 60px;
+		line-height: 60px;
+		padding-top: 5px;
+		background-color: $bind-white;
+		z-index: 100;
+		.search-box {
+			position: relative;
+			flex: 1;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 30px;
+			margin-left: 20px;
+			border-radius: 5px;
+			background-color: #F5F5F5;
+			.iconfont {
+				position: absolute;
+				top: 0;
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				
+			}
+			.icon-search {
+				left: 0;
+			}
+			.close-btn {
+				right: 7px;
+				color: #999;
+				&::before {
+					content: '\e658';
+				}
+			}
+			.search-input {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				font-size: 16px;
+				background-color: transparent;
+			}
+		}
+		.cancel-btn {
+			width: 65px;
+			line-height: 40px;
+			text-align: center;
+			background-color: transparent;
+			font-size: 16px;
+		}
+	}
+}
+.city-wrap {
+	position: absolute;
+	left: 0;
+	top: 70px;
+	bottom: 0;
+	width: 100%;
+	background-color: $bind-white;
+	.city-title {
+		display: block;
+		padding-left: 10px;
+		line-height: 24px;
+		background-color: #F5F5F5;
+	}
+	.position-box {
+		position: fixed;
+		left: 50%;
+		top: 70px;
+		bottom: 0;
+		width: 100%;
+		min-width: 320px;
+		max-width: 640px;
+		transform: translateX(-50%);
+		.nav-bar {
+			position: fixed;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 35px;
+			font-size: 13px;
+			text-align: center;
+			overflow: hidden;
+			z-index: 999;
+			.nav-item {
+				line-height: 0.36rem;
+			}
+			.nav-hot {
+				line-height: 24px;
+			}
+		}
+		.all-citys {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			overflow-y: auto;
+			.city-box {
+				padding-right: 35px;
+				.hot-wrap {
+					padding: 10px 0;
+					ul {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin-bottom: 10px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						.hot-item {
+							flex: 1;
+							display: block;
+							width: 0;
+							height: 30px;
+							line-height: 30px;
+							margin-left: 15px;
+							text-align: center;
+							border: $bind-border;
+							border-radius: 3px;
+							box-sizing: border-box;
+							&:last-child {
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+				.item-box {
+					.city-item {
+						line-height: 36px;
+						padding-left: 10px;
+						margin-right: 30px;
+						border-bottom: $bind-border;
+						color: #333;
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.city-filter {
+		width: 100%;
+		.city-lists {
+			.list-item {
+				line-height: 36px;
+				padding-left: 10px;
+				border-bottom: $bind-border;
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+		.no-data {
+			padding-top: 20px;
+			line-height: 30px;
+			font-size: 18px;
+			text-align: center;
+		}
+	}
+}
+.tip-box {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	background-color: #009efc;
+	font-size: 40px;
+	color: $bind-white;
+	text-align: center;
+	line-height: 60px;
+	opacity: 0;
+	z-index: -1;
+}
+.appear-tip {
+	z-index: 10;
+	animation: hide 1s linear;
+}
+@keyframes hide {
+	0% {
+		opacity: 1;
+	}
+	60% {
+		opacity: .5;
+	}
+	100% {
+		opacity: 0
+	}
+}
