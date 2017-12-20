@@ -12,7 +12,7 @@
 
 <style lang="scss">
 	@import 'assets/scss/reset';
-	@import 'assets/scss/iconfont.css';
+	@import 'assets/scss/iconfont';
 
 	html, body {
 		width: 100%;

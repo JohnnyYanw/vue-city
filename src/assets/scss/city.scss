@@ -32,16 +32,16 @@ $bind-border: solid 1px #DDD;
 				position: absolute;
 				top: 0;
 				display: block;
+				width: 30px;
 				height: 40px;
 				line-height: 40px;
-				
+				text-align: center;
 			}
 			.icon-search {
 				left: 0;
 			}
 			.close-btn {
-				right: 7px;
-				color: #999;
+				right: 0;
 				&::before {
 					content: '\e658';
 				}

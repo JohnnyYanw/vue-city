@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'iconfont';
-	src: url('../fonts/iconfont.eot');
-	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/iconfont.woff') format('woff'),
-		 url('../fonts/iconfont.ttf') format('truetype'),
-		 url('../fonts/iconfont.svg#iconfont') format('svg');
+	src: url('../static/fonts/iconfont.eot');
+	src: url('../static/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+		 url('../static/fonts/iconfont.woff') format('woff'),
+		 url('../static/fonts/iconfont.ttf') format('truetype'),
+		 url('../static/fonts/iconfont.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -15,68 +15,6 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-appreciate:before { content: "\e644"; }
-
-.icon-edit:before { content: "\e649"; }
-
-.icon-location:before { content: "\e651"; }
-
-.icon-roundcheck:before { content: "\e657"; }
-
 .icon-roundclosefill:before { content: "\e658"; }
 
 .icon-search:before { content: "\e65c"; }
-
-.icon-time:before { content: "\e65f"; }
-
-.icon-unfold:before { content: "\e661"; }
-
-.icon-order:before { content: "\e66c"; }
-
-.icon-back:before { content: "\e679"; }
-
-.icon-right:before { content: "\e6a3"; }
-
-.icon-delete:before { content: "\e6b4"; }
-
-.icon-home:before { content: "\e6b8"; }
-
-.icon-round:before { content: "\e6d7"; }
-
-.icon-fold:before { content: "\e6de"; }
-
-.icon-xinglijicun:before { content: "\e604"; }
-
-.icon-calendar:before { content: "\e74a"; }
-
-.icon-weixinzhifu:before { content: "\e683"; }
-
-.icon-iconcar:before { content: "\e60b"; }
-
-.icon-zhifubao:before { content: "\e691"; }
-
-.icon-star01:before { content: "\e606"; }
-
-.icon-guanbijiantou:before { content: "\e86d"; }
-
-.icon-jiesongji:before { content: "\e888"; }
-
-.icon-zengjia:before { content: "\e889"; }
-
-.icon-dianhua:before { content: "\e88b"; }
-
-.icon-wifi:before { content: "\e894"; }
-
-.icon-lichengdixian:before { content: "\e89c"; }
-
-.icon-tingche:before { content: "\e8aa"; }
-
-.icon-reshui:before { content: "\e8a9"; }
-
-.icon-youyongchi:before { content: "\e8ae"; }
-
-.icon-zaocan:before { content: "\e8b2"; }
-
-.icon-shangquanxiao:before { content: "\e8c4"; }
-
-.icon-jian:before { content: "\e632"; }

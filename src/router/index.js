@@ -6,7 +6,10 @@ Vue.use(Router);
 const routes = [
 	{
 		path: '/',
-		name: 'HelloWorld',
+		redirect: 'index'
+	}, {
+		path: '/index',
+		name: 'index',
 		component: resolve => require(['components/City'], resolve)
 	}
 ];

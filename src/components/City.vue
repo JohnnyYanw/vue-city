@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="city-input">
-			<input type="text" placeholder="选择城市" v-model="city" readonly @click="showPage = true">
+			<input type="text" placeholder="请选择城市" v-model="city" readonly @click="showPage = true">
 		</div>
 		<div class="city-page" v-show="showPage">
 			<header class="top-head">
@@ -20,15 +20,8 @@
 						<section class="city-box hot-city">
 							<span class="city-title" id="hot">热门城市</span>
 							<div class="hot-wrap">
-								<ul>
-									<li class="hot-item">上海</li>
-									<li class="hot-item">上海</li>
-									<li class="hot-item">上海</li>
-								</ul>
-								<ul>
-									<li class="hot-item">上海</li>
-									<li class="hot-item">上海</li>
-									<li class="hot-item">上海</li>
+								<ul v-for="(items, index) in hotList" :key="index">
+									<li class="hot-item" v-for="(item, i) in items" @click="clickCity(item.cityName)" :key="i">{{item.cityName}}</li>
 								</ul>
 							</div>
 						</section>
@@ -66,6 +59,7 @@
 <script>
 	import pinyinlite from 'pinyinlite/index_full';
 	import CityPlugin from 'assets/js/city';
+	import cityData from '../util/mock';
 
 	export default {
 		data() {
@@ -75,8 +69,9 @@
 				tipAppear: false,
 				tipTxt: '',
 				searchKey: '',
-				showCity: [],  // 城市数据,格式[{letter: 'A', citys: [{cityName: '安阳'}, {fullPinyin: 'anyang'}, {jPinyin: 'ay'}]}, ...]
-				cityList: [{cityName: "上海"}, {cityName: "杭州"}, {cityName: "常州"}, {cityName: "成都"}, {cityName: "九寨沟"}, {cityName: "杭州"}, {cityName: "常州"}, {cityName: "成都"}, {cityName: "杭州"}, {cityName: "常州"}, {cityName: "成都"}, {cityName: "杭州"}, {cityName: "常州"}, {cityName: "成都"}]  // 初始城市数据
+				showCity: [], // 城市数据,格式[{letter: 'A', citys: [{cityName: '安阳'}, {fullPinyin: 'anyang'}, {jPinyin: 'ay'}]}, ...]
+				hotList: [{cityName: '上海'}, {cityName: '杭州'}, {cityName: '嘉兴'}, {cityName: '成都'}, {cityName: '丽江'}, {cityName: '黄山'}],
+				cityList: []  // 初始城市数据
 			}
 		},
 		computed: {
@@ -90,10 +85,20 @@
 			}
 		},
 		created() {
+			this.cityList = cityData.city;
+			this.formatHotList();
 			this.showCity = CityPlugin.formatCitys(this.cityList);
 		},
 		mounted() {},
 		methods: {
+			// 格式化热门城市数据
+			formatHotList() {
+				let arr = this.hotList;
+				this.hotList = [];
+				for(let i = 0; i < arr.length; i += 3) {
+					this.hotList.push(arr.slice(i, i + 3));
+				}
+			},
 			clearKeyWords() {
 				this.searchKey = '';
 			},
@@ -112,7 +117,10 @@
 				// cityWrap.scrollTo(0, sTop);
 			},
 			// 点击城市，将城市名称保存在localStorage中，并跳转到需要填充城市信息的页面
-			clickCity(city) {}
+			clickCity(city) {
+				this.city = city;
+				this.showPage = false;
+			}
 		}
 	}
 </script>
@@ -126,7 +134,7 @@
 			display: block;
 			width: 70%;
 			height: 20px;
-			padding: 10px 0;
+			padding: 10px 0 10px 5px;
 			margin: 0 auto;
 		}
 	}
